@@ -75,10 +75,10 @@ module.exports = {
     env: {},
 
     // set to false for no bell
-  //  bell: 'SOUND',
+    //  bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: false,
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -88,6 +88,54 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    //plugin configurations
+    hyperline: {                                                                 
+      plugins: [                                                                 
+        "ip",                                                                    
+        "cpu",                                                                   
+        "spotify"                                                                
+      ]                                                                          
+    },
+
+    hyperTabs: {
+      trafficButtons: true,
+      border: true,
+      tabIconsColored: true,
+      closeAlign: 'right',
+      activityColor: 'salmon'
+    },
+
+    commands: [],
+
+    StarWarsTheme: {
+      character: ['darth-vader', 'r2d2','han-solo', 'luke-skywalker-older','bb8'], // Define your favorite star wars character
+      lightsaber: 'true', // Activate your theme's lightsaber mode
+      unibody: 'false', // Define the color of the Hyper window header
+      avatar: 'true'  // Activate your theme's background avatar
+    },
+
+    hyperStatusLine: {
+      dirtyColor: 'salmon',
+      aheadColor: 'ivory',
+      footerTransparent: true
+    }
+    /*overlay: {
+      alwaysOnTop: true,
+      animate: true,
+      hasShadow: false,
+      hideDock: false,
+      hideOnBlur: false,
+      hotkeys: ['Option+Space'],
+      position: 'bottom',
+      primaryDisplay: false, 
+      resizable: true,
+      startAlone: false,
+      startup: false,
+      size: 0.4,
+      tray: true,
+      unique: false
+    }*/
   },
 
   // a list of plugins to fetch and install from npm
@@ -96,22 +144,22 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-dracula", 'hyperlinks', 'hyper-tabs-enhanced', "hyper-search"],
+  plugins: [
+    "hyperlinks",
+    "hyper-tabs-enhanced",
+    "hyper-search",
+    "hypercwd",
+    //"hyperterm-overlay"
+    //"hyper-one-dark"
+    //"hyper-star-wars",
+    //"hyper-snazzy"
+    "hyper-startup",
+    //"hyper-dracula",
+    "hyper-night-owl",
+    "hyperline",
+    //"hyper-statusline",
+  ],
 
-  hyperTabs: {
-    trafficButtons: true,
-    border: false,
-    tabIconsColored: true,
-    closeAlign: 'right',
-    activityColor: 'salmon'
-  },
-
-  visor: {
-  hotkey: 'CommandOrControl+Shift+Z',
-  position: 'top', // or left, right, bottom
-  width: 200, // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical
-  height: 900, // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal
-  },
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
@@ -126,5 +174,6 @@ module.exports = {
 
   // Mac Only. Need restart. Enable the dark vibrance and blurred background
   // NOTE: The backgroundOpacity should be between 0.1 and 0.9 to see the effect.
-  enableVibrance: false
+  enableVibrance: false,
+
 };
